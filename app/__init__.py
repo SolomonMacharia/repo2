@@ -1,11 +1,17 @@
 
 from flask import Flask
-from manage import init_db, init_testdb, drop_all
+from flask_restplus import Api
 
-def create_app():
+from manage import init_db, init_testdb, drop_all
+from app.config import Config
+
+api = Api()
+
+def create_app(config_class=Config):
     app = Flask(__name__)
     init_db()
     init_testdb()
     drop_all()
+    api.init_app(app)
 
     return app

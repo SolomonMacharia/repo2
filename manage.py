@@ -10,8 +10,8 @@ dev_db_url = os.getenv('DATABASE_URI')
 test_db_url = os.getenv('TEST_DATABASE_URI')
 
 # create connection to db
-def connection(url):
-    conn = psycopg2.connect(url, dns=None)
+def connection(*args):
+    conn = psycopg2.connect(dev_db_url, dns=None)
     return conn
 
 # create tables
