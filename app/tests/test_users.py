@@ -5,7 +5,6 @@ from flask_testing import TestCase
 
 from app import create_app
 from app.config import TestingConfig
-from app.tests.basetests import BaseTestCase
 
 
 
