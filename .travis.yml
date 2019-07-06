@@ -12,11 +12,11 @@ install:
 
 before_script:
   - psql -c 'create database questioner_test;' -U postgres
+    export APP_SETTINGS="app.config.TestingConfig"
+    export SECRET_KEY="justatest"
+    export TEST_DB_URI="dbname='questioner_test'"
 
 script: pytest
-  export APP_SETTINGS="app.config.TestingConfig"
-  export SECRET_KEY="justatest"
-  export TEST_DB_URI="dbname='questioner_test'"
 
 after_success:
   - coveralls
