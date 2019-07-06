@@ -16,6 +16,7 @@ before_script:
 script:
   export APP_SETTINGS="app.config.TestingConfig"
   export SECRET_KEY="justatest"
+  export TEST_DB_URI="dbname='questioner_test'"
 
 after_success:
   - coveralls
