@@ -33,4 +33,4 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
-    DATABASE_URI = os.getenv('TEST_DATABASE_URI', postgres_local_base + database_name + '_test')
+    DATABASE_URI = os.getenv('TEST_DATABASE_URI')
