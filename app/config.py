@@ -26,7 +26,7 @@ class DevelopmentConfig(Config):
     """Development configuration """
     DEVELOPMENT = True
     DEBUG = True
-    DATABASE_URI = os.getenv('DATABASE_URI', postgres_local_base + database_name + '_dev')
+    DATABASE_URI = os.getenv('DATABASE_URI')
 
 class TestingConfig(Config):
     """Testing configuration"""
